@@ -47,10 +47,8 @@ const SignInForm = () => {
         <h2 className='text-center text-2xl'>Sign In</h2>
         <p className='text-center text-muted-foreground'>
           Sign in using the following credentials:
-          <span className='text-let block'>
-            Email: demo&#64;cosdensolutions.io
-          </span>
-          <span className='text-let block'>Password: cosdensolutions</span>
+          <span className='block'>Email: demo&#64;cosdensolutions.io</span>
+          <span className='block'>Password: cosdensolutions</span>
         </p>
         <Separator />
       </CardHeader>

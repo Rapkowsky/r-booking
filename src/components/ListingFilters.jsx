@@ -13,9 +13,9 @@ const ListingFilters = ({ onChange }) => {
   };
 
   return (
-    <div className='flex md:flex-row flex-col items-center justify-center gap-2 '>
+    <div className='flex flex-col items-center justify-center gap-2 md:flex-row '>
       <Input
-        className='w-[400px]'
+        className='w-[300px] md:w-[400px]'
         placeholder='Search destinations'
         value={search}
         onChange={(e) => setSearch(e.target.value)}

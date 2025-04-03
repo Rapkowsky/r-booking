@@ -15,7 +15,7 @@ const ListingDetailsCardImages = ({ listing }) => {
   return (
     <>
       <img
-        className='mb-4 h-[500px] w-full rounded-md object-cover'
+        className='mb-4 w-full rounded-md object-cover md:h-[500px]'
         src={getImageUrl(listing.images[currentImageIndex])}
         alt={listing.name}
       />
@@ -24,7 +24,7 @@ const ListingDetailsCardImages = ({ listing }) => {
           {listing.images.map((image, index) => (
             <CarouselItem
               key={image}
-              className='basis-1/3 cursor-pointer'
+              className='cursor-pointer min-[500px]:basis-1/3'
               onClick={() => setCurrentImageIndex(index)}
               isSelected={index === currentImageIndex}
             >

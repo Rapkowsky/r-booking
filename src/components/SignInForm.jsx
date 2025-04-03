@@ -49,10 +49,10 @@ const SignInForm = () => {
           Sign in using the following credentials:
         </p>
         <p className='mb-0 text-center text-muted-foreground'>
-          Email: demo&#64;cosdensolutions.io
+          Email: rr@demo.com
         </p>
         <p className='text-center text-muted-foreground'>
-          Password: cosdensolutions
+          Password: rrDemoProject
         </p>
         <Separator />
       </CardHeader>

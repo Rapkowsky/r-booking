@@ -782,11 +782,10 @@ export const Step10 = () => {
       <p>
         With the authentication turned on, we can now sign in to the application
         by using the available demo account. The email is{' '}
-        <code>demo@cosdensolutions.io</code> and the password is{' '}
-        <code>cosdensolutions</code>. We can sign in, see the{' '}
-        <code>Navbar</code> appear, and even try to go to the "Home" page! But
-        since our <code>token</code> is not sent in any request yet, we won't
-        see any data.
+        <code>rr@demo.com</code> and the password is <code>rr-demo</code>. We
+        can sign in, see the <code>Navbar</code> appear, and even try to go to
+        the "Home" page! But since our <code>token</code> is not sent in any
+        request yet, we won't see any data.
       </p>
       <p>
         We'll need to update the <code>.env</code> file with the following code:

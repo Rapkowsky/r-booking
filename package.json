@@ -1,8 +1,8 @@
 {
-  "name": "project-react",
+  "name": "r-booking",
   "author": {
-    "name": "Cosden Solutions",
-    "email": "contact@cosdensolutions.io"
+    "name": "Robert Rapkowski",
+    "email": "contact@rr-demo.io"
   },
   "private": true,
   "version": "1.0.0",

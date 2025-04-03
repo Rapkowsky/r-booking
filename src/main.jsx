@@ -6,7 +6,7 @@ import AuthProvider from '@/components/AuthProvider';
 import ThemeProvider from '@/components/ThemeProvider';
 import { store } from '@/state/store';
 
-import Router from './Router';
+import Router from './router';
 
 import './index.css';
 

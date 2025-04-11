@@ -1,7 +1,5 @@
-import { useQuery } from '@tanstack/react-query';
 import { useCallback, useMemo, useState } from 'react';
 
-import api from '@/api';
 import DataRenderer from '@/components/DataRenderer';
 import ListingFilters from '@/components/ListingFilters';
 import ListingList from '@/components/ListingList';

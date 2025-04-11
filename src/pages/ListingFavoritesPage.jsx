@@ -1,10 +1,9 @@
-import { useQuery } from '@tanstack/react-query';
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import api from '@/api';
 import DataRenderer from '@/components/DataRenderer';
 import ListingList from '@/components/ListingList';
+import UseListingsQuery from '@/hooks/queries/UseListingsQuery';
 
 const ListingFavoritesPage = () => {
   const { favoriteListingIds } = useSelector((state) => state.listings);
@@ -13,10 +12,7 @@ const ListingFavoritesPage = () => {
     data: { data: listings } = {},
     isError,
     isLoading,
-  } = useQuery({
-    queryKey: ['listings'],
-    queryFn: () => api.get('/api/listings'),
-  });
+  } = UseListingsQuery();
 
   const favoriteListings = useMemo(() => {
     if (!listings) {

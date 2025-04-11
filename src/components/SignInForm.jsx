@@ -2,7 +2,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 
-import api from '@/api';
 import { useAuth } from '@/components/AuthProvider';
 import {
   Button,
@@ -11,6 +10,7 @@ import {
   CardHeader,
   Separator,
 } from '@/components/ui';
+import UseSignInMutation from '@/hooks/mutations/UseSignInMutation';
 
 import Form from './Form';
 import TextInput from './TextInput';
@@ -27,9 +27,11 @@ const SignInForm = () => {
     resolver: zodResolver(signInFormSchema),
   });
 
+  const signInMutation = UseSignInMutation();
+
   const onSubmit = async (data) => {
     try {
-      const response = await api.post('/api/signin', data);
+      const response = await signInMutation.mutateAsync(data);
       setToken(response.data.accessToken);
     } catch (e) {
       form.setError('root', {
@@ -64,10 +66,10 @@ const SignInForm = () => {
           <TextInput control={form.control} name='password' type='password' />
 
           <Button
-            disabled={form.isSubmitting}
+            disabled={signInMutation.isPending}
             onClick={form.handleSubmit(onSubmit)}
           >
-            {form.isSubmitting ? 'Loading...' : 'Sign In'}
+            {signInMutation.isPending ? 'Loading...' : 'Sign In'}
           </Button>
         </Form>
       </CardContent>

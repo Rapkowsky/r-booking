@@ -6,6 +6,7 @@ import DataRenderer from '@/components/DataRenderer';
 import ListingFilters from '@/components/ListingFilters';
 import ListingList from '@/components/ListingList';
 import { Separator } from '@/components/ui';
+import UseListingsQuery from '@/hooks/queries/UseListingsQuery';
 
 const HomePage = () => {
   const [filters, setFilters] = useState({
@@ -20,12 +21,7 @@ const HomePage = () => {
     data: { data: listings } = {},
     isError,
     isLoading,
-  } = useQuery({
-    queryKey: ['listings', fetchOptions],
-    queryFn: () => api.get('/api/listings', fetchOptions),
-    staleTime: 0,
-    gcTime: 0,
-  });
+  } = UseListingsQuery(fetchOptions);
 
   const handleFilters = useCallback((filters) => {
     setFilters(filters);

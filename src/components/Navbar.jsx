@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+import api from '@/api';
 import { useAuth } from '@/components/AuthProvider';
 import {
   DropdownMenu,
@@ -10,7 +11,7 @@ import {
 } from '@/components/ui';
 import UseSignOutMutation from '@/hooks/mutations/UseSignOutMutation';
 
-const Navbar = () => {
+const NavBar = () => {
   const { setToken, setUser } = useAuth();
 
   const signOutMutation = UseSignOutMutation();
@@ -32,6 +33,7 @@ const Navbar = () => {
       <div className='flex flex-row items-center justify-between gap-8 px-8 py-4'>
         <Link to='/'>Home</Link>
         <div className='flex-end flex flex-row items-center gap-8'>
+          <Link to='/listings/create'>Create Listing</Link>
           <Link to='/favorites'>Favorites</Link>
 
           <DropdownMenu>
@@ -39,6 +41,9 @@ const Navbar = () => {
               <Link>Account</Link>
             </DropdownMenuTrigger>
             <DropdownMenuContent align='end'>
+              <Link to='/profile'>
+                <DropdownMenuItem>Profile</DropdownMenuItem>
+              </Link>
               <DropdownMenuItem onClick={handleSignOut}>
                 Sign Out
               </DropdownMenuItem>
@@ -51,4 +56,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavBar;

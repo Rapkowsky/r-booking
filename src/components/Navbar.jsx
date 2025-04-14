@@ -11,7 +11,7 @@ import {
 import UseSignOutMutation from '@/hooks/mutations/UseSignOutMutation';
 
 const Navbar = () => {
-  const { setToken } = useAuth();
+  const { setToken, setUser } = useAuth();
 
   const signOutMutation = UseSignOutMutation();
 
@@ -20,8 +20,10 @@ const Navbar = () => {
       await signOutMutation.mutateAsync();
 
       setToken(null);
+      setUser(null);
     } catch {
       setToken(null);
+      setUser(null);
     }
   };
 

@@ -1,10 +1,16 @@
 import { DollarSign, Pin, Users } from 'lucide-react';
+import { useSelector } from 'react-redux';
 
 import ListingDetailsCardImages from '@/components/ListingDetailsCardImages';
 import ListingFavoriteButton from '@/components/ListingFavoriteButton';
 import { Card, Separator } from '@/components/ui';
 
+import UserAvatar from './UserAvatar';
+
 const ListingDetailsCard = ({ listing }) => {
+  const { users } = useSelector((state) => state.users);
+
+  const listingUser = users[listing.userId];
   return (
     <Card className='mx-auto p-4'>
       <ListingDetailsCardImages listing={listing} />
@@ -19,22 +25,15 @@ const ListingDetailsCard = ({ listing }) => {
               / night
             </span>
           </div>
-          <div className='flex items-center gap-2'>
-            <Pin className='h-4 w-4 text-primary' />
-            <span className='text-muted-foreground'>
-              {listing.location.name}
-            </span>
-          </div>
-          <div className='flex items-center gap-2'>
-            <Users className='h-4 w-4 text-primary' />
-            <span className='text-muted-foreground'>
-              {listing.maxGuests} Guests
-            </span>
-          </div>
         </div>
-        <ListingFavoriteButton listing={listing} />
       </div>
-      <Separator className='my-4' />
+      <Separator className='mb-4' />
+      {listingUser && (
+        <>
+          <UserAvatar user={listingUser} />
+          <Separator className='my-4' />
+        </>
+      )}
       <div className='whitespace-pre-line'>{listing.description}</div>
     </Card>
   );

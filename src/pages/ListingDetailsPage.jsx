@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import DataRenderer from '@/components/DataRenderer';
 import ListingDetailsCard from '@/components/ListingDetailsCard';
 import ReviewList from '@/components/ReviewList';
+import useListingDetailsQuery from '@/hooks/queries/useListingDetailsQuery';
 import useListingReviewsQuery from '@/hooks/queries/useListingReviewsQuery';
-import UseListingsDetailsQuery from '@/hooks/queries/UseListingsDetailsQuery';
 
 const ListingDetailsPage = () => {
   const { listingId } = useParams();
@@ -13,7 +13,7 @@ const ListingDetailsPage = () => {
     data: { data: listing } = {},
     error,
     isLoading,
-  } = UseListingsDetailsQuery(listingId);
+  } = useListingDetailsQuery(listingId);
 
   const {
     data: { data: reviews } = {},

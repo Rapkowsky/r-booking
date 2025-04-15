@@ -90,4 +90,4 @@ npm run fix
 - **hooks** - Custom React hooks.
 - **api** - API configuration and mock implementation.
 - **state** - Redux logic.
-- **assets** - Static assets (images, icons).
+- **assets** - Static assets (images, icons). 

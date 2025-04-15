@@ -26,12 +26,14 @@ export const useAuth = () => {
 const AuthProvider = ({ children }) => {
   const { users } = useSelector((state) => state.users);
   const dispatch = useDispatch();
+
   const [token, setToken] = useState();
   const [userId, setUserId] = useState();
 
-  // Provides easy acces to the user object
-  const user = users[userId];
+  // Provides easy access to the user object
+  const user = users[userId] || null;
 
+  // Sets the user in the Redux store + sets the userId in state
   const setUser = useCallback(
     (user) => {
       if (user) {
@@ -57,7 +59,7 @@ const AuthProvider = ({ children }) => {
     };
 
     fetchMe();
-  }, [setUser]);
+  }, [dispatch, setUser]);
 
   useLayoutEffect(() => {
     const authInterceptor = api.interceptors.request.use((config) => {
@@ -109,7 +111,7 @@ const AuthProvider = ({ children }) => {
   }, [setUser]);
 
   return (
-    <AuthContext.Provider value={{ token, setToken, setUser, user }}>
+    <AuthContext.Provider value={{ setToken, setUser, token, user }}>
       {children}
     </AuthContext.Provider>
   );

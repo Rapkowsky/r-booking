@@ -2,10 +2,10 @@ import { useMutation } from '@tanstack/react-query';
 
 import api from '@/api';
 
-const UseSignOutMutation = () => {
+const useSignOutMutation = () => {
   return useMutation({
-    mutationFn: () => api.post('/api/signin'),
+    mutationFn: () => api.post('/api/signout'),
   });
 };
 
-export default UseSignOutMutation;
+export default useSignOutMutation;

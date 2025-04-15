@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 
 import DataRenderer from '@/components/DataRenderer';
 import ListingDetailsCard from '@/components/ListingDetailsCard';
+import ReviewList from '@/components/ReviewList';
 import useListingReviewsQuery from '@/hooks/queries/useListingReviewsQuery';
 import UseListingsDetailsQuery from '@/hooks/queries/UseListingsDetailsQuery';
 
@@ -22,9 +23,19 @@ const ListingDetailsPage = () => {
 
   return (
     <div className='container py-4'>
-      <DataRenderer error={error} isLoading={isLoading}>
-        <ListingDetailsCard listing={listing} />
-      </DataRenderer>
+      <div className='mb-8'>
+        <DataRenderer error={error} isLoading={isLoading}>
+          <ListingDetailsCard listing={listing} />
+        </DataRenderer>
+      </div>
+      {listing && (
+        <div>
+          <DataRenderer error={reviewsError} isLoading={isReviewsLoading}>
+            <h2 className='mb-4'>Reviews</h2>
+            <ReviewList reviews={reviews} />
+          </DataRenderer>
+        </div>
+      )}
     </div>
   );
 };

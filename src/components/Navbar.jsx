@@ -9,16 +9,13 @@ import {
   DropdownMenuTrigger,
   Separator,
 } from '@/components/ui';
-import UseSignOutMutation from '@/hooks/mutations/UseSignOutMutation';
 
 const NavBar = () => {
   const { setToken, setUser } = useAuth();
 
-  const signOutMutation = UseSignOutMutation();
-
   const handleSignOut = async () => {
     try {
-      await signOutMutation.mutateAsync();
+      await api.post('/api/signout');
 
       setToken(null);
       setUser(null);

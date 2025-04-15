@@ -1,6 +1,5 @@
 import { format } from 'date-fns';
 import { Calendar as CalendarIcon } from 'lucide-react';
-import { useState } from 'react';
 
 import {
   Button,

@@ -2,7 +2,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 
+import api from '@/api';
 import { useAuth } from '@/components/AuthProvider';
+import Form from '@/components/Form';
+import TextInput from '@/components/TextInput';
 import {
   Button,
   Card,
@@ -10,10 +13,7 @@ import {
   CardHeader,
   Separator,
 } from '@/components/ui';
-import UseSignInMutation from '@/hooks/mutations/UseSignInMutation';
-
-import Form from './Form';
-import TextInput from './TextInput';
+import useSignInMutation from '@/hooks/mutations/useSignInMutation';
 
 const signInFormSchema = z.object({
   email: z.string().email(),
@@ -23,11 +23,11 @@ const signInFormSchema = z.object({
 const SignInForm = () => {
   const { setToken, setUser } = useAuth();
 
+  const signInMutation = useSignInMutation();
+
   const form = useForm({
     resolver: zodResolver(signInFormSchema),
   });
-
-  const signInMutation = UseSignInMutation();
 
   const onSubmit = async (data) => {
     try {

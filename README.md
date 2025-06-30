@@ -1,93 +1,86 @@
-# R-Booking - Demo Project
+## <a> 🖥️&nbsp;&nbsp; R-Booking (Frontend)</a>
 
-R-Booking is a web application for browsing and managing rental property listings, similar to platforms like Booking.com or Airbnb.
+<br />
 
-## Project Description
+<p>
+    <img
+        src="https://skills.syvixor.com/api/icons?i=react,ts,reacthookform,zod,tailwind,shadcnui,git,vercel" />
+</p>
 
-R-Booking is a comprehensive web application that allows users to browse and manage rental property listings. The project was created as a demonstration of skills in React technologies.
+<p>
+  R-Booking is a web application for browsing and managing rental property listings, similar to platforms like Booking.com or Airbnb. The app allows users to browse and filter properties, view detailed listings with galleries and location info, add favorites, securely authenticate with JWT, read and leave reviews with star ratings, and create new rental listings with form validation.
+</p>
 
-## Features
+<p>
+    <a href="https://r-booking-project.vercel.app/" target="_blank"
+        >Live demo - see it in action</a
+    >
+</p>
+<p>
+    <a href="https://github.com/Rapkowsky/project-react" target="_blank"
+        >Github repo - see more details</a
+    >
+</p>
 
-- **Browse Listings**: Users can explore available rental properties on the homepage.
-- **Filter Listings**: Offers can be filtered by name, date, and number of guests.
-- **Listing Details**: Clicking on a listing opens a detailed view, including a photo gallery, description, location, price, and guest capacity.
-- **Manage Favorites**: Users can add listings to their favorites and view them in a dedicated section.
-- **User Authentication**: Login system with form validation and JWT handling.
-- **Review System**: Users can browse property reviews with star ratings.
-- **Create Listings**: Form that allows users to add new rental properties with data validation.
-
-## Data Storage
-
-### LocalStorage
-
-- Property, location, and user data are stored in LocalStorage to simulate a database.
-- API query results are cached in LocalStorage with a 5-minute expiration.
-
-### Application Memory
-
-- Access tokens are stored in application memory (not in LocalStorage for security reasons).
-- Favorite listings state is managed in Redux (reset on page refresh).
-
-## Technologies
-
-- **React** - Library for building user interfaces.
-- **React Router** - Navigation and routing within the application.
-- **Redux & Redux Toolkit** - Global state management.
-- **TanStack Query (React Query)** - Asynchronous state management and caching.
-- **Axios** - API communication.
-- **React Hook Form** - Form handling.
-- **Tailwind CSS** - Styling components.
-- **Lucide React** - Icon library.
-- **JavaScript** - Programming language.
-- **Zod** - Data validation.
-
-## User Authentication
-
-To test the login functionality, use the following credentials:
+<br/>
 
 **Demo Login Credentials:**
 
 - **Email:** rr@demo.com
 - **Password:** rrDemoProject
 
-## Mock API
+<br/>
 
-The application uses a mocked API (powered by MockAdapter for Axios) to simulate real server communication. The Mock API supports:
+<p>
+    <img width="100%" src="/public/rBooking.png" />
+</p>
 
-- Fetching a list of listings with optional filtering.
-- Fetching details of individual listings.
-- Fetching reviews for specific listings.
-- User authentication (login/logout).
-- Refreshing JWT tokens.
-- Creating new listings.
+<br />
 
-## Running the Project
+## <a> 🔋&nbsp;&nbsp; Core Features</a>
 
-```sh
-# Install dependencies
-npm install
+- &nbsp;🏠&nbsp;&nbsp; **Browse Listings:** Explore available rental properties on the homepage.
+- &nbsp;🔎&nbsp;&nbsp; **Filter Listings:** Filter offers by name, date, and number of guests.
+- &nbsp;🖼️&nbsp;&nbsp; **Listing Details:** View detailed property info, photo gallery, description, location, price, and guest capacity.
+- &nbsp;❤️&nbsp;&nbsp; **Manage Favorites:** Add listings to favorites and view them in a dedicated section. (State managed in Redux, reset on page refresh)
+- &nbsp;🔑&nbsp;&nbsp; **User Authentication:** Secure login with form validation and JWT handling.
+- &nbsp;⭐&nbsp;&nbsp; **Review System:** Browse property reviews with star ratings.
+- &nbsp;➕&nbsp;&nbsp; **Create Listings:** Add new rental properties with data validation.
 
-# Start the development server
-npm run dev
-```
+<br>
 
-Once started, the application will be available at `http://localhost:5173`.
+## <a name="local-development"> 🖥️&nbsp;&nbsp; Local Development</a>
 
-## Linting and Formatting
+0.  **Prerequisites** <br>
+    Make sure you have the following installed on your machine:
 
-The project has setup `eslint` and `prettier` for all linting and formatting without any extra configuration.
+    - [Git](https://git-scm.com/)
+    - [npm](https://www.npmjs.com/) (Package Manager)
 
-To fix any linting or formatting issues across all relevant files, run this command:
+1.  **Clone the repository:**
 
-```sh
-npm run fix
-```
+    ```bash
+    git clone https://github.com/Rapkowsky/r-booking.git
+    ```
 
-## Project Structure
+2.  **Navigate to the project directory:**
 
-- **components** - All UI components of the application.
-- **pages** - Components for application pages.
-- **hooks** - Custom React hooks.
-- **api** - API configuration and mock implementation.
-- **state** - Redux logic.
-- **assets** - Static assets (images, icons). 
+    ```bash
+    cd r-booking
+    ```
+
+3.  **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+4.  **Running the Project**
+
+    ```bash
+    npm run dev
+    ```
+
+    Visit &nbsp;[http://localhost:5173/](http://localhost:5173/)&nbsp; to access your app.
+
+<br>
